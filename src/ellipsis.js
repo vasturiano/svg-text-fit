@@ -1,19 +1,17 @@
 import Kapsule from 'kapsule';
-import * as d3 from 'd3';
 
 export default Kapsule({
     props: {
         maxWidth: { default: Infinity }
     },
     init(el, state) {
-        state.el = d3.select(el);
+        state.el = el;
     },
     update(state) {
-        const origTxt = state.el.text(),
-            el = state.el.node();
-        let nChars = Math.round(origTxt.length*state.maxWidth/el.getBBox().width*1.2);  // Start above
-        while(--nChars && state.maxWidth/el.getBBox().width<1){
-            state.el.text(abbreviateText(origTxt, nChars));
+        const origTxt = state.el.textContent;
+        let nChars = Math.round(origTxt.length*state.maxWidth/state.el.getBBox().width*1.2);  // Start above
+        while(--nChars && state.maxWidth/state.el.getBBox().width<1){
+            state.el.textContent = abbreviateText(origTxt, nChars);
         }
 
         //
