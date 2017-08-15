@@ -10,7 +10,7 @@ export default Kapsule({
     },
     update(state) {
         [...Array(state.passes).keys()].some(() => {
-            const startSize = parseInt(state.el.style['font-size'].split('px')[0]);
+            const startSize = parseInt(state.el.style['font-size'].split('px')[0]) || 20;
             const bbox = state.el.getBBox();
             const newSize = Math.floor(startSize * Math.min(state.bbox.width / bbox.width, state.bbox.height / bbox.height));
 
