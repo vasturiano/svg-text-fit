@@ -4,7 +4,7 @@
   "description": "SVG utility for fitting text inside a box by resizing or ellipsis",
   "unpkg": "dist/svg-text-fit.min.js",
   "main": "dist/svg-text-fit.common.js",
-  "module": "dist/svg-text-fit.mjs",
+  "module": "dist/svg-text-fit.module.js",
   "scripts": {
     "build": "rm -rf dist && mkdir dist && rollup -c",
     "watch": "rollup -c -w",
