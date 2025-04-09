@@ -1,6 +1,6 @@
 {
   "name": "svg-text-fit",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "SVG utility for fitting text inside a box by resizing or ellipsis",
   "type": "module",
   "jsdelivr": "dist/svg-text-fit.min.js",
